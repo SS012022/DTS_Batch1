@@ -8,7 +8,9 @@ app.use(express.static(staticpath))
 
 app.use(express.urlencoded({extended:false}))
 app.set('view engine', 'ejs')
-
+app.get("/",(req,res)=>{
+    res.send("Ready for upload - downlaod")
+})
 app.get("/api",(req,res)=>{
     res.render("a")
 })
