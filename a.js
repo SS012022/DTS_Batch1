@@ -8,6 +8,7 @@ app.use(express.static(staticpath))
 
 app.use(express.urlencoded({extended:false}))
 app.set('view engine', 'ejs')
+
 app.get("/",(req,res)=>{
     res.send("Ready for upload - downlaod")
 })
@@ -26,6 +27,9 @@ const upload=multer({storage})
 
 app.post("/upload",upload.single('image'),(req,res)=>{
     return res.redirect("/api")
+})
+app.get("/msg",(req,res)=>{
+    res.send("pls try this")
 })
 
 app.get("/download/:file",(req,res)=>{
