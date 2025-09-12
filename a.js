@@ -29,7 +29,7 @@ app.post("/upload",upload.single('image'),(req,res)=>{
     return res.redirect("/api")
 })
 app.get("/msg",(req,res)=>{
-    res.send("pls try this")
+    res.send("ok,we are trying")
 })
 
 app.get("/download/:file",(req,res)=>{
